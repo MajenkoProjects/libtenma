@@ -24,13 +24,6 @@
 const int width = 400;
 const int height = 240;
 
-char *textFont = "/home/matt/.fonts/Hack-Bold.ttf";
-int textFontSize = 20;
-int text;
-int black;
-
-
-
 libusb_context *ctx = NULL;
 libusb_device_handle *dso_728705 = NULL;
 
@@ -98,7 +91,7 @@ gdImagePtr dso_728705_getFrame() {
             gdImageSetPixel(img, x++, y, p3);
             gdImageSetPixel(img, x++, y, p4);
 
-            if (x >= 400) {
+            if (x >= width) {
                 x = 0;
                 y++;
             }
