@@ -1,0 +1,3 @@
+bin_PROGRAMS=cap-728705
+cap_728705_SOURCES=cap-728705.c
+cap_728705_LDFLAGS=-ltenma

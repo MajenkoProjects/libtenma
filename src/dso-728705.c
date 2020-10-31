@@ -23,7 +23,6 @@
 
 const int width = 400;
 const int height = 240;
-int colors[16];
 
 char *textFont = "/home/matt/.fonts/Hack-Bold.ttf";
 int textFontSize = 20;
@@ -54,7 +53,7 @@ gdImagePtr dso_728705_getFrame() {
     int y = 0;
     int r = 0;
 
-    gdImagePtr img = gdImageCreateTrueColor(width, height);
+    gdImagePtr img = gdImageCreate(width, height);
 
     if (libusb_bulk_transfer(dso_728705, 2, data, 1, &done, 1000) < 0) {
         gdImageDestroy(img);
@@ -89,15 +88,15 @@ gdImagePtr dso_728705_getFrame() {
             int p7 = (buffer[i] >> 4) & 0x0F;
             int p8 = (buffer[i] >> 0) & 0x0F;
 
-            gdImageSetPixel(img, x++, y, colors[p5]);
-            gdImageSetPixel(img, x++, y, colors[p6]);
-            gdImageSetPixel(img, x++, y, colors[p7]);
-            gdImageSetPixel(img, x++, y, colors[p8]);
+            gdImageSetPixel(img, x++, y, p5);
+            gdImageSetPixel(img, x++, y, p6);
+            gdImageSetPixel(img, x++, y, p7);
+            gdImageSetPixel(img, x++, y, p8);
 
-            gdImageSetPixel(img, x++, y, colors[p1]);
-            gdImageSetPixel(img, x++, y, colors[p2]);
-            gdImageSetPixel(img, x++, y, colors[p3]);
-            gdImageSetPixel(img, x++, y, colors[p4]);
+            gdImageSetPixel(img, x++, y, p1);
+            gdImageSetPixel(img, x++, y, p2);
+            gdImageSetPixel(img, x++, y, p3);
+            gdImageSetPixel(img, x++, y, p4);
 
             if (x >= 400) {
                 x = 0;

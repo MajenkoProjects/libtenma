@@ -37,6 +37,6 @@ AC_CHECK_LIB(gd, gdImageSetPixel, [], [
 # Checks for programs.
 AC_PROG_CC
 
-AC_CONFIG_FILES([Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile examples/Makefile examples/cap-728705/Makefile])
 AC_OUTPUT
 
