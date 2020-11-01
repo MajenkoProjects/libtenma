@@ -4,7 +4,7 @@ m4_define([package_version_micro],[0])
 m4_define([api_version],[1])
 
 AC_PREREQ([2.10])
-AC_INIT([libtenma], [package_version_major.package_version_minor.package_version_micro], [matt@majenko.co.uk], [], [https://majenko.co.uk])
+AC_INIT([tenma-examples], [package_version_major.package_version_minor.package_version_micro], [matt@majenko.co.uk], [], [https://majenko.co.uk])
 
 PKG_PROG_PKG_CONFIG
 PKG_INSTALLDIR
@@ -35,29 +35,18 @@ PKG_CHECK_MODULES([libusb],
 PKG_CHECK_MODULES([libgd],
                      [gdlib],
                      [])
+PKG_CHECK_MODULES([libtenma],
+                     [libtenma],
+                     [])
 
 AC_SUBST([PACKAGE_VERSION_MAJOR],package_version_major)
 AC_SUBST([PACKAGE_VERSION_MINOR],package_version_minor)
 AC_SUBST([PACKAGE_VERSION_MICRO],package_version_micro)
 AC_SUBST([API_VERSION],api_version)
 
-#AC_CHECK_HEADER(libusb-1.0/libusb.h, [], [
-#    AC_MSG_FAILURE(libusb not found)
-#])
-#AC_CHECK_LIB(usb-1.0, libusb_init, [], [
-#    AC_MSG_FAILURE(libusb not found)
-#])
-
-#AC_CHECK_HEADER(gd.h, [], [
-#    AC_MSG_FAILURE(gd not found)
-#])
-#AC_CHECK_LIB(gd, gdImageSetPixel, [], [
-#    AC_MSG_FAILURE(gd not found)
-#])
-
 # Checks for programs.
 AC_PROG_CC
 
-AC_CONFIG_FILES([Makefile src/Makefile src/libtenma.pc])
+AC_CONFIG_FILES([Makefile cap-728705/Makefile])
 AC_OUTPUT
 
