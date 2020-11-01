@@ -1,0 +1,25 @@
+Source: libtenma
+Priority: optional
+Maintainer: Matt Jenkins <matt@majenko.co.uk>
+Build-Depends: debhelper-compat (= 12), autotools-dev
+Standards-Version: 4.4.1
+Section: libs
+Homepage: https://github.com/MajenkoProjects/libtenma
+#Vcs-Browser: https://salsa.debian.org/debian/libtenma
+#Vcs-Git: https://salsa.debian.org/debian/libtenma.git
+
+Package: libtenma-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libtenma (= ${binary:Version}), ${misc:Depends}
+Description: Routines for interfacing with various TENAM devices
+ Currently supported: 72-8705 DSO
+
+Package: libtenma
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Routines for interfacing with various TENAM devices
+  Currently supported: 72-8705 DSO
+
